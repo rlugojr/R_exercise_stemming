@@ -25,8 +25,23 @@
 install.packages("SnowballC")
 library(SnowballC)
 
+# try it
+getStemLanguages()
 
+myWords <- c("spiele", "spielst", "spielt", "spielen", "spielt", "spielen")
 
+wordStem(myWords, language = "de")
+
+# Hm. Not impressed ...
+
+# lets look at the supplied vocabulary ...
+load(system.file("words", "german.RData", package = "SnowballC"))
+
+# lots of nonsense - why?
+# Look at the German stemming algorithm:
+# http://snowball.tartarus.org/algorithms/german/stemmer.html
+
+# ...
 
 # == SECTION =========================================================
 
